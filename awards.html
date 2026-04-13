@@ -1,89 +1,73 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>대학 인증·수상 | GTCC</title>
+    <title>교과목다운로드 | GTCC</title>
     <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
-
-    <!-- Preload Fonts -->
-    <link rel="stylesheet" as="style" crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-
-    <script>
-        tailwind = {
-            config: {
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
-                        },
-                        colors: {
-                            glass: 'rgba(255, 255, 255, 0.05)',
-                            'glass-border': 'rgba(255, 255, 255, 0.1)',
-                            primary: '#3b82f6',
-                            'primary-dark': '#1d4ed8',
-                        }
-                    }
-                }
-            }
-        };
-        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/theme-overrides.css">
-
-    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Modern Utilities Overrides */
-        /* Body styles moved to Tailwind utilities on the body tag */
-
-        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
-        .bento-card {
-            border-radius: 1.5rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* 파란색 부분(교과목 리스트)을 중앙 정렬하기 위한 스타일 */
+        .subject-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
+        }
+        
+        .subject-header {
+            text-align: center; /* 제목과 설명 중앙 정렬 */
+            margin-bottom: 40px;
+        }
+        
+        .subject-header h1 { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            color: #333;
+            margin-bottom: 15px;
         }
 
-        .bento-card:hover {
-            transform: translateY(-4px);
+        /* 리스트를 격자 형태로 중앙 배치 */
+        .subject-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            max-width: 1000px; /* 리스트 전체 너비 제한 */
+            margin: 0 auto; /* 리스트 자체를 중앙으로 */
         }
 
-        /* Scroll Reveal Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        .subject-link {
+            display: block;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #3b82f6; /* 포인트 컬러 */
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Gradient Text */
-        .text-gradient {
-            background: linear-gradient(to right, #60a5fa, #c084fc);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .subject-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #f8fbff;
+            color: #3b82f6;
         }
     </style>
 </head>
-<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+<body>
     <div data-include="assets/partials/header.html"></div>
-<main class="content-page">
-    <section class="page-hero">
-        <div class="container">
-            <span class="page-category">사이버홍보실</span>
-            <h1>대학 인증·수상</h1>
-            <p>GTCC 사이버 캠퍼스가 수상한 인증과 표창을 소개합니다.</p>
-        </div>
-    </section>
 
-
-    
-   <main class="content-page">
+    <main class="content-page">
         <section class="page-hero">
             <div class="container">
                 <span class="page-category">교과목 자료실</span>
